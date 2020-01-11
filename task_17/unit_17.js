@@ -6,9 +6,7 @@ let a1_res = [], a2_res = [], a3_res = [], a4_res = [], b1_res = [], b6_res = []
 
 function t1() {
     let a1 = [4, 5, 6, 7, 12, 34, 56, 78, 90, 11];
-    a1_res = a1.map(elem => {
-        return elem*2;
-    });
+    a1_res = a1.map(elem => elem * 2);
     document.querySelector('.out-1').innerHTML = a1_res;
 }
 
@@ -20,9 +18,7 @@ document.querySelector('.b-1').onclick = t1;
 
 function t2() {
     let a2 = [2, 3, 4, 5, 10, 11, 12];
-    a2_res = a2.map(elem => {
-        return elem**2;
-    });
+    a2_res = a2.map(elem => elem ** 2);
     document.querySelector('.out-2').innerHTML = a2_res;
 }
 
@@ -34,14 +30,10 @@ document.querySelector('.b-2').onclick = t2;
 
 function t3() {
     let a3 = [4, "3", 6, 7, "12", 34, "56", 78, 90, 11];
-    a3.map(elem => {
-        if (typeof (elem) == "string") {
-            a3_res.push(parseInt(elem));
-        }
-    });
+    a3_res = a3.filter(elem => typeof (elem) == "string")
+        .map(elem => parseInt(elem));
     document.querySelector('.out-3').innerHTML = a3_res;
 }
-
 document.querySelector('.b-3').onclick = t3;
 
 
@@ -66,9 +58,7 @@ document.querySelector('.b-4').onclick = t4;
 
 function t5() {
     let b1 = [3, 14, 15, 92];
-    b1_res = b1.filter(elem => {
-        return elem % 2 == 0;
-    });
+    b1_res = b1.filter(elem =>elem % 2 == 0);
     document.querySelector('.out-5').innerHTML = b1_res;
 }
 
@@ -82,9 +72,7 @@ document.querySelectorAll('.b-5').forEach(elem => {
 
 function t6() {
     let b6 = [3, 14, 15, 92, "6", "5", "hello", 32];
-    b6_res = b6.filter(elem => {
-        return typeof (elem) == "number";
-    });
+    b6_res = b6.filter(elem =>typeof (elem) == "number");
     document.querySelector('.out-6').innerHTML = b6_res;
 }
 
@@ -96,12 +84,9 @@ document.querySelector('.b-6').onclick = t6;
 
 function t7() {
     let b7 = ["php-7", "html", "css", 92, "6", "5", "hello", 32];
-    b7_res = b7.filter(elem => {
-        return typeof (elem) == "string" && elem.length > 3;
-    });
+    b7_res = b7.filter(elem => typeof (elem) == "string" && elem.length > 3);
     document.querySelector('.out-7').innerHTML = b7_res;
 }
-
 document.querySelector('.b-7').onclick = t7;
 
 // Task 8 ============================================
@@ -109,11 +94,14 @@ document.querySelector('.b-7').onclick = t7;
 
 function t8() {
     let b8 = [3, 14, 15, 92, "6", "5", "hello", 32];
-    b8_res = b8.filter(function (elem, index) {
-        if (elem % 2 == 0) {
-           return index;
-        }
-    });
+    b8_res = b8
+        .map((elem, index)  => {
+            return {elem, index}
+        })
+        .filter(elem => elem.elem % 2 === 0)
+        .map(elem => elem.index);
+
+    console.log(b8_res);
     document.querySelector('.out-8').innerHTML = b8_res;
 }
 
@@ -145,9 +133,7 @@ document.querySelector('.b-9').onclick = t9;
 
 function t10() {
     let b10 = [[1, 2, 3], [3, 4, 6], [4, 5, 7], [8, 9, 3]];
-    b10_res = b10.filter(elem => {
-        return elem.includes(3);
-    });
+    b10_res = b10.filter(elem => elem.includes(3));
     document.querySelector('.out-10').innerHTML = b10_res;
 }
 
