@@ -35,9 +35,11 @@ document.querySelector('.b-2').onclick = t2;
 
 function t3() {
     let a3 = [2, 'hello', 3, 'hi', 4, 'Mazai'];
-    a3.forEach(elem =>
-        a3_res = a3.filter(elem => typeof elem == "number") #todo убрать filter
-    );
+    a3.forEach(elem => {
+        if (typeof elem == "number") {
+            a3_res.push(elem);
+        }
+    });
     document.querySelector('.out-3').innerHTML = a3_res;
 }
 
@@ -111,7 +113,7 @@ document.querySelector('.b-8').onclick = t8;
 
 function t9() {
     let a9 = [["hi", "mahai"], ["test", "best"]];
-    for (let i=0;i<a9.length;i++){
+    for (let i = 0; i < a9.length; i++) {
         a9_res += `${a9[i].join("-")}-`;
     }
     document.querySelector('.out-9').innerHTML = a9_res;
@@ -124,11 +126,11 @@ document.querySelector('.b-9').onclick = t9;
 /*  Дан массив a10 = {name: ivan, age: 15, sex: 1, id: 45} - преобразуйте его в GET строку (GET параметры). Найдите описание что такое GET строка самостоятельно. Разделитель - амперсанд. Результат присвойте a10_res. Запускаться решение должно при вызове функции t10. Допускается лишний амперсанд в конце строки!!! */
 
 function t10() {
-   let  a10 = {name: "ivan", age: 15, sex: 1, id: 45};
-   for (let key in a10){
-       a10_res+=`${key}=${a10[key]}&`;
-   }
- console.log(a10_res);
+    let a10 = {name: "ivan", age: 15, sex: 1, id: 45};
+    for (let key in a10) {
+        a10_res += `${key}=${a10[key]}&`;
+    }
+    document.querySelector('.out-10').innerHTML = a10_res;
 }
 
 document.querySelector('.b-10').onclick = t10;
