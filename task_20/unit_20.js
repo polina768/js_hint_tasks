@@ -79,21 +79,21 @@ document.querySelector(".i-6").addEventListener("keypress", t6);
 
 // Task 8 ============================================
 /*  Дан input .i-8. Напишите функцию t8, которая выводит в .out-8 вводимый в input текст, но заменяет i на 1, o на 0, l на 7. */
-
+let inp8 = document.querySelector(".out-8");
 function t8(evt) {
     let sign = evt.key;
     switch (sign) {
         case "i":
-            document.querySelector(".out-8").innerHTML += evt.key = 1;
+            inp8.innerHTML += evt.key = 1;
             break;
         case "o":
-            document.querySelector(".out-8").innerHTML += evt.key = 0;
+            inp8.innerHTML += evt.key = 0;
             break;
         case "l":
-            document.querySelector(".out-8").innerHTML += evt.key = 7;
+            inp8.innerHTML += evt.key = 7;
             break;
         default:
-            document.querySelector(".out-8").innerHTML += evt.key;
+            inp8.innerHTML += evt.key;
     }
 }
 
