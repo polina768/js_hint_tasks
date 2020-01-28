@@ -22,3 +22,14 @@ section {
 .hide {
     display: none;
 }
+.clava {
+
+    border: 1px solid black;
+}
+
+.cell {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    border: 1px solid black;
+}
